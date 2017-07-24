@@ -38,7 +38,7 @@ class SafariBooksSpider(scrapy.Spider):
         self.output_dir = kwargs.get('output', './output/{}/'.format(bookid))
         self.initialize_output(self.output_dir)
         #
-        self.epub_output_dir = kwargs.get('output', './')
+        self.epub_output_dir = kwargs.get('epub_output', './')
 
     @staticmethod
     def initialize_output(output, rm_previous_output=True):
