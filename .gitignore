@@ -5,3 +5,5 @@ output/
 *.mobi
 *.pyc
 */*.pyc
+.idea
+3rd/

@@ -1,2 +1,11 @@
 scrapy
 jinja2
+BeautifulSoup
+
+colorlog
+voluptuous
+pyyaml
+FuzzyWuzzy
+# UserWarning: Using slow pure-python SequenceMatcher. Install python-Levenshtein to remove this warning
+#  warnings.warn('Using slow pure-python SequenceMatcher. Install python-Levenshtein to remove this warning')
+python-Levenshtein
