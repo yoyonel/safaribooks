@@ -94,7 +94,7 @@ def crypt_config(config, fuzzy_pattern='safari_password', min_ratio=80):
 
     """
     return dict(
-        (k, '*' * len(v) if fuzz.token_set_ratio(k, fuzzy_pattern) > min_ratio else v)
+        (k, '*' * len(v) if v and fuzz.token_set_ratio(k, fuzzy_pattern) > min_ratio else v)
         for k, v in config.items()
     )
 
@@ -105,9 +105,22 @@ def get_book_informations_from_url(url):
     :param url:
     :return:
     """
-    url_tokens = url.split('/')
-    book_id = filter(lambda token: token.isdigit(), url_tokens)[0]
-    book_name = url_tokens[url_tokens.index(book_id) - 1]
+    url_tokens = filter(lambda token: bool(token), url.split('/'))
+
+    # pas forcement vrai,
+    # par exemple:
+    # - url: https://www.safaribooksonline.com/library/view/the-pragmatic-programmer/020161622X/
+    # -> 020161622X n'est pas un full digit, car 'X' n'est pas un chiffre
+    # book_id = filter(lambda token: token.isdigit(), url_tokens)[0]
+    #
+    # id_token_for_book_name = url_tokens.index(book_id) - 1
+    # book_name = url_tokens[id_token_for_book_name]
+
+    # On va supposer que l'ID est le dernier token
+    book_id = url_tokens[-1]
+    # si ID du book est le dernier element => le NAME du book est l'avant dernier element
+    book_name = url_tokens[-2]
+
     return book_id, book_name
 
 
