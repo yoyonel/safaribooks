@@ -85,9 +85,13 @@ def crypt_config(config, fuzzy_pattern='safari_password', min_ratio=80):
     """
 
     :param config:
+    :type config: dict
     :param fuzzy_pattern:
+    :type fuzzy_pattern: str
     :param min_ratio:
+    :type min_ratio: int
     :return:
+    :rtype: dict
 
     >>> crypt_config({'password': 'toto', 'passwd': 'tata', 'key': 'value'})
     {'passwd': '****', 'password': '****', 'key': 'value'}
@@ -103,16 +107,17 @@ def get_book_informations_from_url(url):
     """
 
     :param url:
+    :type url: str
     :return:
+    :rtype: (str, str)
     """
     url_tokens = filter(lambda token: bool(token), url.split('/'))
 
-    # pas forcement vrai,
-    # par exemple:
+    # pas forcement vrai, par exemple:
     # - url: https://www.safaribooksonline.com/library/view/the-pragmatic-programmer/020161622X/
-    # -> 020161622X n'est pas un full digit, car 'X' n'est pas un chiffre
-    # book_id = filter(lambda token: token.isdigit(), url_tokens)[0]
+    # -> '020161622X' n'est pas un full digit, car 'X' n'est pas un digit.
     #
+    # book_id = filter(lambda token: token.isdigit(), url_tokens)[0]
     # id_token_for_book_name = url_tokens.index(book_id) - 1
     # book_name = url_tokens[id_token_for_book_name]
 
@@ -128,7 +133,7 @@ def _sprocess_cmd(cmd):
     """
 
     :param cmd:
-    :return:
+    :type cmd: str
     """
     p = Popen(cmd.split(), stdout=PIPE, stdin=PIPE, stderr=STDOUT, bufsize=1)
     p.stdin.close()  # eof
@@ -139,15 +144,15 @@ def _sprocess_cmd(cmd):
     logger.debug("rc: {}".format(rc))
 
 
-def _launch_scrapy_book_downloader(container,
-                                   functor_to_get_id_name_book,
-                                   config):
+def _launch_scrapy_book_downloader(container, functor_to_get_id_name_book, config):
     """
 
     :param container:
+    :type container: iter
     :param functor_to_get_id_name_book:
     :param config:
     :return:
+    :rtype: int
     """
     nb_downloaded = 0
     for item in container:
@@ -170,9 +175,11 @@ def _launch_scrapy_book_downloader(container,
                         _sprocess_cmd(cmd)
                     else:
                         logger.info(
-                            "'skip-if_exist' option activate and used for {} because {} exist.".format(book_id, find_books_with_id))
+                            "'skip-if_exist' activate and used for {} because {} exist.".format(
+                                book_id, find_books_with_id)
+                        )
             else:
-                logger.info("'not_download' option activate and used for {}.".format(book_id))
+                logger.info("'not_download' activate and used for {}.".format(book_id))
 
         except Exception, e:
             logger.error("Exception: {}".format(e))
