@@ -8,6 +8,11 @@ import scrapy
 from jinja2 import Template
 from BeautifulSoup import BeautifulSoup
 
+import ntpath
+
+import json
+
+
 null = None
 false = False
 
@@ -71,9 +76,10 @@ class SafariBooksSpider(scrapy.Spider):
         with open("{}/OEBPS/cover-image.jpg".format(output_dir), "w") as f:
             f.write(response.body)
 
-    @staticmethod
-    def parse_content_img(img, response, output_dir):
+    # @staticmethod
+    def parse_content_img(self, img, response, output_dir):
         img_path = os.path.join("{}/OEBPS".format(output_dir), img)
+        self.logger.debug("img_path: {}".format(img_path))
 
         img_dir = os.path.dirname(img_path)
         if not os.path.exists(img_dir):
@@ -83,24 +89,61 @@ class SafariBooksSpider(scrapy.Spider):
             f.write(response.body)
 
     def parse_page_json(self, title, bookid, response):
-        page_json = eval(response.body)
+        # TODO: fix a potential exploit
+        # Grosse erreur de code ! Une grosse possibilite d'injection de code a ce niveau (faille de securite).
+        # En plus ca ne fonctionne pas tout le temps ! :-/
+        # page_json = eval(response.body)
+        # https://stackoverflow.com/questions/28843876/nulls-instead-of-nones-in-json-data-with-python
+        page_json = json.loads(response.body)
+
         yield scrapy.Request(page_json["content"],
                              callback=partial(self.parse_page, title, bookid, page_json["full_path"],
                                               output_dir=self.output_dir))
 
     def parse_page(self, title, bookid, path, response, output_dir):
         template = Template(PAGE_TEMPLATE)
-        with codecs.open("{}/OEBPS/".format(output_dir) + path, "wb", "utf-8") as f:
+
+        # PATCH: Il y avait des soucys avec des sous chemins pour recuperer les pages html.
+        # Certains books utilisent un sous repertoire 'xhtml/' (par exemple).
+        # Ca cree potentiellement des pbs pour le rapatriement des images par la suite.
+        # TODO: Stabiliser (refactorer) les chemins relatifs (pour les pages)
+
+        # https://stackoverflow.com/questions/8384737/tract-file-name-from-path-no-matter-what-the-os-path-format
+        # https://stackoverflow.com/questions/8384737/extract-file-name-from-path-no-matter-what-the-os-path-format
+        # https://www.safaribooksonline.com/library/view/python-standard-library/0596000960/ch13s03.html
+        filename = ntpath.basename(path)
+        dirname = ntpath.dirname(path)
+        output_dirname = "{}/OEBPS/".format(output_dir) + dirname
+        if not os.path.exists(output_dirname):
+            self.logger.warning("Path: '{}' doesn't exist !".format(output_dirname))
+            os.mkdir(output_dirname)
+
+        # with codecs.open("{}/OEBPS/".format(output_dir) + filename, "wb", "utf-8") as f:
+        with codecs.open(os.path.join(output_dirname, filename), "wb", "utf-8") as f:
             pretty = BeautifulSoup(response.body).prettify()
             f.write(template.render(body=pretty.decode('utf8')))
 
         for img in response.xpath("//img/@src").extract():
             if img:
-                yield scrapy.Request(self.host + '/library/view/' + title + '/' + bookid + '/' + img,
+                # PATCH: il y a probleme de chemin relatif sur les pages (parfois dans un sous repertoire 'xhtml') et
+                # les images (dans le cas de 'xhtml' par exemple, le path relatif contient '../' pour remonter a une
+                # racine (du projet du livre).
+                # TODO: Stabiliser (refactorer) les chemins relatifs (pour les images)
+                img = img.replace("../", "")
+                img_url = self.host + '/library/view/' + title + '/' + bookid + '/' + img
+                self.logger.info("img_url: {}".format(img_url))
+
+                yield scrapy.Request(img_url,
                                      callback=partial(self.parse_content_img, img, output_dir=self.output_dir))
 
     def parse_toc(self, response):
-        toc = eval(response.body)
+        # TODO: fix a potential exploit
+        # Grosse erreur de code ! Une grosse possibilite d'injection de code a ce niveau (faille de securite).
+        # En plus ca ne fonctionne pas tout le temps ! :-/
+        # toc = eval(response.body)
+        # https://stackoverflow.com/questions/28843876/nulls-instead-of-nones-in-json-data-with-python
+        toc = json.loads(response.body)
+
         self.book_name = toc['title_safe']
         cover_path, = re.match(r'<img src="(.*?)" alt.+', toc["thumbnail_tag"]).groups()
         yield scrapy.Request(self.host + cover_path,
@@ -120,5 +163,7 @@ class SafariBooksSpider(scrapy.Spider):
     def closed(self, _):
         # https://docs.python.org/2/library/shutil.html
         archive = shutil.make_archive(base_name=self.book_name, format='zip', root_dir=self.output_dir)
+        epub_filename = "{}_{}.epub".format(self.bookid, self.book_name)
         # https://docs.python.org/2/library/os.path.html
-        shutil.move(archive, os.path.join(self.epub_output_dir, self.book_name + '.epub'))
+        shutil.move(archive, os.path.join(self.epub_output_dir, epub_filename))
+        self.logger.info("EPUB generated: {}".format(epub_filename))

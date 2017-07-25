@@ -11,6 +11,8 @@ from fuzzywuzzy import fuzz
 import pprint
 from subprocess import Popen, PIPE, STDOUT
 import os
+from typing import NamedTuple
+from glob import glob
 
 __author__ = 'atty_l'
 
@@ -25,8 +27,6 @@ stream.setFormatter(formatter)
 logger = logging.getLogger(__name__)
 logger.setLevel(LOG_LEVEL)
 logger.addHandler(stream)
-
-
 # --------------
 
 
@@ -47,8 +47,20 @@ class P(pprint.PrettyPrinter, object):
             if len(o) > self._max_length:
                 o = o[:self._max_length] + self._ellipsis
         return pprint.PrettyPrinter._format(self, o, *args, **kwargs)
+# --------------
 
 
+# ----- NAMEDTUPLE -------
+# https://stackoverflow.com/questions/34269772/type-hints-in-namedtuple
+SAFARI_CONFIG = NamedTuple(
+    'SAFARI_CONFIG',
+    [
+        ('user', str),
+        ('password', str),
+        ('not_download', bool),
+        ('skip_if_exist', bool),
+        ('epub_output', str)
+    ])
 # --------------
 
 
@@ -65,7 +77,7 @@ def _create_schema():
         Required('safari_user'): str,
         Required('safari_password'): str,
         Optional('safari_urls'): [Url(str)],
-        Optional('safari_ids'): [str, int]
+        Optional('safari_ids'): [str]
     })
 
 
@@ -114,36 +126,42 @@ def _sprocess_cmd(cmd):
     logger.debug("rc: {}".format(rc))
 
 
-def _launch_downloader_from_urls(urls,
-                                 safari_user,
-                                 safari_password,
-                                 not_download=False):
+def _launch_scrapy_book_downloader(container,
+                                   functor_to_get_id_name_book,
+                                   config):
     """
 
-    :param urls:
-    :param safari_user:
-    :param safari_password:
-    :param not_download:
+    :param container:
+    :param functor_to_get_id_name_book:
+    :param config:
     :return:
     """
     nb_downloaded = 0
-    for safari_url in urls:
+    for item in container:
         try:
-            logger.debug("safari_url: {}".format(safari_url))
+            book_id, book_name = functor_to_get_id_name_book(item)
 
-            book_id, book_name = get_book_informations_from_url(safari_url)
-            logger.debug("Safari book id: {}".format(book_id))
+            # scrapy crawl SafariBooks -a user=$1 -a password=$2 -a bookid=$3
+            cmd = "scrapy crawl SafariBooks -a user={} -a password={} -a bookid={}".format(
+                config.user,
+                config.password,
+                book_id
+            )
+            logger.debug("cmd: {}".format(cmd))
 
-            if not not_download:
-                # scrapy crawl SafariBooks -a user=$1 -a password=$2 -a bookid=$3
-                cmd = "scrapy crawl SafariBooks -a user={} -a password={} -a bookid={}".format(
-                    safari_user,
-                    safari_password,
-                    book_id
-                )
-                logger.debug("cmd: {}".format(cmd))
-                #
-                _sprocess_cmd(cmd)
+            if not config.not_download:
+                if config.skip_if_exist:
+                    # https://stackoverflow.com/questions/2225564/get-a-filtered-list-of-files-in-a-directory
+                    find_books_with_id = glob(os.path.join(config.epub_output, "*{}*.epub".format(book_id)))
+                    if not find_books_with_id:
+                        _sprocess_cmd(cmd)
+                    else:
+                        logger.info(
+                            "'skip-if_exist' option activate and used for {} \
+                            because {} exist.".format(book_id, find_books_with_id))
+            else:
+                logger.info("'not_download' option activate and used for {}.".format(book_id))
+
         except Exception, e:
             logger.error("Exception: {}".format(e))
         else:
@@ -152,47 +170,52 @@ def _launch_downloader_from_urls(urls,
     return nb_downloaded
 
 
-def _launch_downloader_from_ids(ids,
-                                safari_user,
-                                safari_password,
-                                not_download=False):
+def _launch_sbd_from_urls(urls, config):
+    """
+    sbd: Scrappy BooksOnline Downloader
+
+    :param urls:
+    :type urls: list
+    :param config:
+     :type config: SAFARI_CONFIG
+    :return:
+    """
+    return _launch_scrapy_book_downloader(urls, lambda url: get_book_informations_from_url(url), config)
+
+
+def _launch_downloader_from_ids(ids, config):
     """
 
     :param ids:
-    :param safari_user:
-    :param safari_password:
-    :param not_download:
+    :type ids: list
+    :param config:
+     :type config: SAFARI_CONFIG
     :return:
     """
-    nb_downloaded = 0
-    for safari_id in ids:
-        try:
-            logger.debug("safari_id: {}".format(safari_id))
+    return _launch_scrapy_book_downloader(ids, lambda id_book: (id_book, id_book), config)
 
-            book_id = safari_id
-            logger.debug("Safari book id: {}".format(book_id))
 
-            if not not_download:
-                # scrapy crawl SafariBooks -a user=$1 -a password=$2 -a bookid=$3
-                cmd = "scrapy crawl SafariBooks -a user={} -a password={} -a bookid={}".format(
-                    safari_user,
-                    safari_password,
-                    book_id
-                )
-                logger.debug("cmd: {}".format(cmd))
-                #
-                _sprocess_cmd(cmd)
-        except Exception, e:
-            logger.error("Exception: {}".format(e))
-        else:
-            nb_downloaded += 1
+def _generate_configuration(args, yaml_config):
+    """
 
-    return nb_downloaded
+    :param args:
+    :param yaml_config:
+    :return:
+    :rtype: NamedTuple
+    """
+    # https://stackoverflow.com/questions/24902258/pycharm-warning-about-not-callable
+    # noinspection PyCallingNonCallable
+    return SAFARI_CONFIG(
+        user=yaml_config['safari_user'],
+        password=yaml_config['safari_password'],
+        not_download=args.not_download,
+        skip_if_exist=args.skip_if_exist,
+        epub_output=args.epub_output
+    )
 
 
 def _process(args):
     """
-
     :param args:
     :return:
 
@@ -201,6 +224,7 @@ def _process(args):
 
     schema = _create_schema()
 
+    # TODO: a revoir ce changement (a l'arrache) de path ...
     os.chdir('..')
 
     for yaml_config in yaml_configs:
@@ -211,21 +235,13 @@ def _process(args):
         except MultipleInvalid as e:
             logger.error("Schema not valid !\nException {}".format(e))
         else:
-            # get access login/password
-            safari_user = yaml_config['safari_user']
-            safari_password = yaml_config['safari_password']
+            config = _generate_configuration(args, yaml_config)
 
             if 'safari_urls' in yaml_config:
-                _launch_downloader_from_urls(yaml_config['safari_urls'],
-                                             safari_user=safari_user,
-                                             safari_password=safari_password,
-                                             not_download=args.not_download)
+                _launch_sbd_from_urls(yaml_config['safari_urls'], config)
 
             if 'safari_ids' in yaml_config:
-                _launch_downloader_from_ids(yaml_config['safari_ids'],
-                                            safari_user,
-                                            safari_password,
-                                            not_download=args.not_download)
+                _launch_downloader_from_ids(yaml_config['safari_ids'], config)
 
 
 def parse_arguments():
@@ -237,9 +253,13 @@ def parse_arguments():
     #
     parser.add_argument('configs', type=argparse.FileType('r'),
                         help='<Required> Configs file')
+    parser.add_argument('-o', '--epub-output', type=str, default='./epub/',
+                        help="EPub output directory (default: %(default)s")
     #
-    parser.add_argument("-d", "--not-download", action="store_true", default=False,
+    parser.add_argument("--not-download", action="store_true", default=False,
                         help="Desactivate downloads (debug purpose)")
+    parser.add_argument("--skip-if-exist", action="store_true", default=True,
+                        help="Skip downloads if the book already exist")
     #
     parser.add_argument("-v", "--verbose", action="store_true", default=False,
                         help="increase output verbosity")
