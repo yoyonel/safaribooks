@@ -157,8 +157,7 @@ def _launch_scrapy_book_downloader(container,
                         _sprocess_cmd(cmd)
                     else:
                         logger.info(
-                            "'skip-if_exist' option activate and used for {} \
-                            because {} exist.".format(book_id, find_books_with_id))
+                            "'skip-if_exist' option activate and used for {} because {} exist.".format(book_id, find_books_with_id))
             else:
                 logger.info("'not_download' option activate and used for {}.".format(book_id))
 
@@ -195,11 +194,12 @@ def _launch_downloader_from_ids(ids, config):
     return _launch_scrapy_book_downloader(ids, lambda id_book: (id_book, id_book), config)
 
 
-def _generate_configuration(args, yaml_config):
+def _generate_configuration_for_sdb(args, yaml_config):
     """
 
     :param args:
     :param yaml_config:
+    :type yaml_config: dict
     :return:
     :rtype: NamedTuple
     """
@@ -228,20 +228,21 @@ def _process(args):
     os.chdir('..')
 
     for yaml_config in yaml_configs:
-        logger.debug("yaml_config: {}".format(P().pprint(crypt_config(yaml_config))))
+        logger.debug("yaml_config: {}".format(P().pformat(crypt_config(yaml_config))))
+
         try:
             # use the validation schema
             schema(yaml_config)
         except MultipleInvalid as e:
             logger.error("Schema not valid !\nException {}".format(e))
         else:
-            config = _generate_configuration(args, yaml_config)
+            sdb_config = _generate_configuration_for_sdb(args, yaml_config)
 
             if 'safari_urls' in yaml_config:
-                _launch_sbd_from_urls(yaml_config['safari_urls'], config)
+                _launch_sbd_from_urls(yaml_config['safari_urls'], sdb_config)
 
             if 'safari_ids' in yaml_config:
-                _launch_downloader_from_ids(yaml_config['safari_ids'], config)
+                _launch_downloader_from_ids(yaml_config['safari_ids'], sdb_config)
 
 
 def parse_arguments():
