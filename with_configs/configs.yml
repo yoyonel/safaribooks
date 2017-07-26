@@ -1,3 +1,103 @@
-safari_user:
-safari_password:
 safari_urls:
+  - https://www.safaribooksonline.com/library/view/hands-on-machine-learning/9781491962282/
+  - https://www.safaribooksonline.com/library/view/fundamentals-of-deep/9781491925607/
+  - https://www.safaribooksonline.com/library/view/cuda-by-example/9780132180160/
+  - https://www.safaribooksonline.com/library/view/python-machine-learning/9781783555130/
+  - https://www.safaribooksonline.com/library/view/learning-scrapy/9781784399788/
+  - https://www.safaribooksonline.com/library/view/python-web-scraping/9781786462589/
+  - https://www.safaribooksonline.com/library/view/natural-language-processing/9781787285101/
+  - https://www.safaribooksonline.com/library/view/machine-learning-for/9781785886607/
+  - https://www.safaribooksonline.com/library/view/data-visualization-with/9781491920565/
+  - https://www.safaribooksonline.com/library/view/web-scraping-with/9781782164364/
+  - https://www.safaribooksonline.com/library/view/defensive-security-handbook/9781491960370/
+  - https://www.safaribooksonline.com/library/view/zero-trust-networks/9781491962183/
+  - https://www.safaribooksonline.com/library/view/network-security-through/9781491962831/
+  - https://www.safaribooksonline.com/library/view/to-improve-cybersecurity/53863MIT58314/
+  - https://www.safaribooksonline.com/library/view/darkweb-cyber-threat/9781316946640/
+  - https://www.safaribooksonline.com/library/view/advanced-penetration-testing/9781119367680/
+safari_ids:
+  - '0131489062'
+  - '0321160762'
+  - '0596007957'
+  - '0596009828'
+  - '067232640X'
+  - '9780080466514'
+  - '9780121197926'
+  - '9780124077812'
+  - '9780124157965'
+  - '9780132180160'
+  - '9780134464701'
+  - '9780134495514'
+  - '9780134547046'
+  - '9780240812137'
+  - '9780470516928'
+  - '9780750687065'
+  - '9780764526046'
+  - '9781118037423'
+  - '9781118891308'
+  - '9781449361747'
+  - '9781466585263'
+  - '9781484200551'
+  - '9781484202500'
+  - '9781484207758'
+  - '9781484209585'
+  - '9781484209646'
+  - '9781484218662'
+  - '9781484219072'
+  - '9781484225981'
+  - '9781491901731'
+  - '9781491912126'
+  - '9781491913833'
+  - '9781491925607'
+  - '9781491933213'
+  - '9781491937983'
+  - '9781491961520'
+  - '9781491978757'
+  - '9781491980446'
+  - '9781522525455'
+  - '9781558606517'
+  - '9781617291920'
+  - '9781617292729'
+  - '9781633430037'
+  - '9781680501629'
+  - '9781680502374'
+  - '9781782169932'
+  - '9781783280797'
+  - '9781783551675'
+  - '9781783552344'
+  - '9781783555130'
+  - '9781783981960'
+  - '9781783982103'
+  - '9781783985128'
+  - '9781783985166'
+  - '9781785887918'
+  - '9781785888410'
+  - '9781785888854'
+  - '9781786461148'
+  - '9781786462923'
+  - '9781786463142'
+  - '9781786465931'
+  - '9781786469755'
+  - '9781786469786'
+  - '9781786469809'
+  - '9781786469908'
+  - '9781787122123'
+  - '9781787125490'
+  - '9781787126787'
+  - '9781787128576'
+  - '9781787129184'
+  - '9781787286986'
+  - '9781904811558'
+  - '9781935504511'
+  - '9781939902351'
+  - '9781940111407'
+  - '9781941222348'
+  - '9781941222881'
+  - '9781522510253'
+# [v] videos
+  # - 9781491987025 [v]
+  # - 9781491977873 [v]
+  # - 9781788398657 [v]
+  # - 9781785887499 [v]
+  # - 9781788479943 [v]
+  # - 9781491986820 [v]

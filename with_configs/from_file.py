@@ -13,6 +13,7 @@ from subprocess import Popen, PIPE, STDOUT
 import os
 from typing import NamedTuple
 from glob import glob
+import getpass
 
 __author__ = 'atty_l'
 
@@ -52,7 +53,7 @@ class P(pprint.PrettyPrinter, object):
 
 # ----- NAMEDTUPLE -------
 # https://stackoverflow.com/questions/34269772/type-hints-in-namedtuple
-SAFARI_CONFIG = NamedTuple(
+NT_Safari_Config = NamedTuple(
     'SAFARI_CONFIG',
     [
         ('user', str),
@@ -61,6 +62,42 @@ SAFARI_CONFIG = NamedTuple(
         ('skip_if_exist', bool),
         ('epub_output', str)
     ])
+# --------------
+
+
+# ----- INPUT USER ------
+try:
+    input = raw_input
+except NameError:
+    pass
+
+
+def prompt(message, errormessage, isvalid, _input=input):
+    """Prompt for input given a message and return that value after verifying the input.
+
+    Keyword arguments:
+    message -- the message to display when asking the user for the value
+    errormessage -- the message to display when the value fails validation
+    isvalid -- a function that returns True if the value given by the user is valid
+    """
+    res = None
+    while res is None:
+        res = _input(str(message)+': ')
+        if not isvalid(res):
+            print str(errormessage)
+            res = None
+    return res
+
+
+def prompt_for_password(message, errormessage, isvalid):
+    """
+
+    :param message:
+    :param errormessage:
+    :param isvalid:
+    :return:
+    """
+    return prompt(message, errormessage, isvalid, _input=getpass.getpass)
 # --------------
 
 
@@ -74,8 +111,8 @@ def _create_schema():
     # https://julien.danjou.info/blog/2015/python-schema-validation-voluptuous
     # Create the validation schema
     return Schema({
-        Required('safari_user'): str,
-        Required('safari_password'): str,
+        Optional('safari_user'): str,
+        Optional('safari_password'): str,
         Optional('safari_urls'): [Url(str)],
         Optional('safari_ids'): [str]
     })
@@ -223,11 +260,27 @@ def _generate_configuration_for_sdb(args, yaml_config):
     :return:
     :rtype: NamedTuple
     """
+    # user
+    try:
+        sbo_user = yaml_config['safari_user']
+    except KeyError:
+        sbo_user = prompt(message="Enter your SafariBookOnline user name",
+                          errormessage="The user name must be provided",
+                          isvalid=lambda v: len(v) > 0)
+    # password
+    try:
+        sbo_password = yaml_config['safari_password']
+    except KeyError:
+        sbo_password = prompt_for_password(message="Enter your SafariBookOnline password",
+                                           errormessage="The password must be provided",
+                                           isvalid=lambda v: len(v) > 0)
+        logger.debug("sbo_password: {}".format(sbo_password))
+
     # https://stackoverflow.com/questions/24902258/pycharm-warning-about-not-callable
     # noinspection PyCallingNonCallable
-    return SAFARI_CONFIG(
-        user=yaml_config['safari_user'],
-        password=yaml_config['safari_password'],
+    return NT_Safari_Config(
+        user=sbo_user,
+        password=sbo_password,
         not_download=args.not_download,
         skip_if_exist=args.skip_if_exist,
         epub_output=args.epub_output

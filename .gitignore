@@ -8,3 +8,4 @@ output/
 .idea
 3rd/
 .venv
+configs_with_id.yml
