@@ -295,9 +295,124 @@ safari_urls:
   - https://www.safaribooksonline.com/library/view/c-how-to/9780134448930/
   - https://www.safaribooksonline.com/library/view/c11-for-programmers/9780133439885/
   - https://www.safaribooksonline.com/library/view/c-primer-fifth/9780133053043/
-
   # OSG
   - https://www.safaribooksonline.com/library/view/openscenegraph-30/9781849512824/
+  # 2017-07-30
+  # GO
+  - https://www.safaribooksonline.com/library/view/concurrency-in-go/9781491941294/
+  - https://www.safaribooksonline.com/library/view/go-cookbook/9781783286836/
+  - https://www.safaribooksonline.com/library/view/go-design-patterns/9781788390552/
+  - https://www.safaribooksonline.com/library/view/how-to-containerize/9781491982310/
+  - https://www.safaribooksonline.com/library/view/go-design-patterns/9781786466204/
+  - https://www.safaribooksonline.com/library/view/go-programming-blueprints/9781786468949/
+  - https://www.safaribooksonline.com/library/view/learning-go-programming/9781784395438/
+  - https://www.safaribooksonline.com/library/view/go-building-web/9781787123496/
+  - https://www.safaribooksonline.com/library/view/go-in-practice/9781633430075/
+  - https://www.safaribooksonline.com/library/view/go-web-programming/9781617292569/
+  - https://www.safaribooksonline.com/library/view/learning-go-web/9781785282317/
+  - https://www.safaribooksonline.com/library/view/introducing-go/9781491941997/
+  - https://www.safaribooksonline.com/library/view/go-in-action/9781617291784/
+  - https://www.safaribooksonline.com/library/view/the-go-programming/9780134190570/
+  - https://www.safaribooksonline.com/library/view/mastering-go-web/9781783981304/
+  # C#
+  - https://www.safaribooksonline.com/library/view/more-effective-c/9780134579306/
+  - https://www.safaribooksonline.com/library/view/effective-c-50/9780134579290/
+  - https://www.safaribooksonline.com/library/view/the-c-programming/9780132484718/
+  - https://www.safaribooksonline.com/library/view/c-70-in/9781491987643/
+  - https://www.safaribooksonline.com/library/view/introduction-to-game/9780134659909/
+  - https://www.safaribooksonline.com/library/view/c-70-pocket/9781491988527/
+  - https://www.safaribooksonline.com/library/view/functional-c/9781785282225/
+  - https://www.safaribooksonline.com/library/view/begin-to-code/9781509301188/
+  - https://www.safaribooksonline.com/library/view/c-programming-cookbook/9781786467300/
+  - https://www.safaribooksonline.com/library/view/building-maintainable-software/9781491967423/
+  - https://www.safaribooksonline.com/library/view/multithreading-with-c/9781785881251/
+  - https://www.safaribooksonline.com/library/view/c-a-beginners/9781771970297/
+  - https://www.safaribooksonline.com/library/view/xamarin-studio-for/9781849691406/
+  - https://www.safaribooksonline.com/library/view/selenium-webdriver-recipes/9781484217429/
+  - https://www.safaribooksonline.com/library/view/c-60-in/9781491927090/
+  - https://www.safaribooksonline.com/library/view/c-24-hour-trainer/9781119065661/
+  - https://www.safaribooksonline.com/library/view/mastering-c-concurrency/9781785286650/
+  - https://www.safaribooksonline.com/library/view/c-60-cookbook/9781491921456/
+  - https://www.safaribooksonline.com/library/view/essential-c-60/9780134176147/
+  # Signal Processing, WaterMarking, FingerPrint
+  - https://www.safaribooksonline.com/library/view/digital-signal-processing/9780128114544/
+  - https://www.safaribooksonline.com/library/view/social-signal-processing/9781108124287/
+  - https://www.safaribooksonline.com/library/view/fpga-based-implementation-of/9781119077954/
+  - https://www.safaribooksonline.com/library/view/signal-processing-and/9781108155496/
+  - https://www.safaribooksonline.com/library/view/digital-signal-processing/9781786301260/
+  - https://www.safaribooksonline.com/library/view/signal-processing-for/9781119116462/
+  - https://www.safaribooksonline.com/library/view/financial-signal-processing/9781118745670/
+  - https://www.safaribooksonline.com/library/view/classification-and-clustering/9781522501404/
+  - https://www.safaribooksonline.com/library/view/sparse-image-and/9781316482018/
+  - https://www.safaribooksonline.com/library/view/signal-processing-for/9781118986769/
+  - https://www.safaribooksonline.com/library/view/the-essential-guide/9780133812220/
+  - https://www.safaribooksonline.com/library/view/essentials-of-digital/9781139905527/
+  - https://www.safaribooksonline.com/library/view/speech-and-audio/9780470195369/
+  - https://www.safaribooksonline.com/library/view/digital-audio-signal/9780470997857/
+  - https://www.safaribooksonline.com/library/view/audio-signal-processing/9780471791478/
+  - https://www.safaribooksonline.com/library/view/signal-processing-perceptual/9781615209255/
+  - https://www.safaribooksonline.com/library/view/digital-audio-editing/9781484216484/
+  - https://www.safaribooksonline.com/library/view/web-audio-api/9781449332679/
+  - https://www.safaribooksonline.com/library/view/android-sensor-programming/9781785285509/
+  - https://www.safaribooksonline.com/library/view/arduino-for-secret/9781783986088/
+  - https://www.safaribooksonline.com/library/view/signal-processing-perceptual/9781615209255/
+  - https://www.safaribooksonline.com/library/view/advanced-techniques-in/9781615209033/
+  - https://www.safaribooksonline.com/library/view/disappearing-cryptography-information/9780123744791/
+  - https://www.safaribooksonline.com/library/view/digital-audio-watermarking/9781599045139/
+  # 2017-07-30: Docker, Kubernetes, Puppet
+  - https://www.safaribooksonline.com/library/view/mastering-docker-/9781787280243/
+  - https://www.safaribooksonline.com/library/view/docker-on-windows/9781785281655/
+  - https://www.safaribooksonline.com/library/view/enterprise-docker-1st/9781491994986/
+  - https://www.safaribooksonline.com/library/view/learning-docker-/9781786462923/
+  - https://www.safaribooksonline.com/library/view/the-devops-21/9781787289703/
+  - https://www.safaribooksonline.com/library/view/docker-bootcamp/9781787286986/
+  - https://www.safaribooksonline.com/library/view/devops-puppet-docker/9781788297615/
+  - https://www.safaribooksonline.com/library/view/troubleshooting-docker/9781783552344/
+  - https://www.safaribooksonline.com/library/view/kubernetes-management-design/9781484225981/
+  - https://www.safaribooksonline.com/library/view/docker-orchestration/9781787122123/
+  - https://www.safaribooksonline.com/library/view/native-docker-clustering/9781786469755/
+  - https://www.safaribooksonline.com/library/view/developing-with-docker/9781786469908/
+  - https://www.safaribooksonline.com/library/view/docker-networking-cookbook/9781786461148/
+  - https://www.safaribooksonline.com/library/view/docker-for-developers/9781940111407/
+  - https://www.safaribooksonline.com/library/view/extending-docker/9781786463142/
+  - https://www.safaribooksonline.com/library/view/docker-creating-structured/9781786465931/
+  - https://www.safaribooksonline.com/library/view/docker-in-practice/9781617292729/
+  - https://www.safaribooksonline.com/library/view/kubernetes-microservices-with/9781484219072/
+  - https://www.safaribooksonline.com/library/view/securing-docker/9781785888854/
+  - https://www.safaribooksonline.com/library/view/docker-in-action/9781633430235/
+  - https://www.safaribooksonline.com/library/view/learning-docker-networking/9781785280955/
+  - https://www.safaribooksonline.com/library/view/docker-high-performance/9781785886805/
+  - https://www.safaribooksonline.com/library/view/pro-docker/9781484218303/
+  - https://www.safaribooksonline.com/library/view/using-docker/9781491915752/
+  - https://www.safaribooksonline.com/library/view/mastering-docker/9781785287039/
+  - https://www.safaribooksonline.com/library/view/monitoring-docker/9781785882753/
+  - https://www.safaribooksonline.com/library/view/docker-cookbook/9781491919705/
+  - https://www.safaribooksonline.com/library/view/docker-containers-from/9780134136639/
+  - https://www.safaribooksonline.com/library/view/docker-up/9781491917565/
+  - https://www.safaribooksonline.com/library/view/docker-cookbook/9781783984862/
+  - https://www.safaribooksonline.com/library/view/cloud-native-python/9781787129313/
+  - https://www.safaribooksonline.com/library/view/kubernetes-up-and/9781491935668/
+  - https://www.safaribooksonline.com/library/view/getting-started-with/9781787283367/
+  - https://www.safaribooksonline.com/library/view/mastering-kubernetes/9781786461001/
+  - https://www.safaribooksonline.com/library/view/kubernetes-cookbook/9781785880063/
+  - https://www.safaribooksonline.com/library/view/getting-started-with/9781784394035/
+  - https://www.safaribooksonline.com/library/view/microservices-deployment-cookbook/9781786469434/
+  - https://www.safaribooksonline.com/library/view/puppet-for-containerization/9781785883286/
+  - https://www.safaribooksonline.com/library/view/the-devops-20/9781785289194/
+  - https://www.safaribooksonline.com/library/view/orchestrating-clustering-and/9781491965221/
+  # ROS: Robotic Operating System
+  - https://www.safaribooksonline.com/library/view/ros-robotics-projects/9781783554713/
+  - https://www.safaribooksonline.com/library/view/ros-robotics-by/9781782175193/
+  - https://www.safaribooksonline.com/library/view/mastering-ros-for/9781783551798/
+  - https://www.safaribooksonline.com/library/view/learning-ros-for/9781783987580/
+  - https://www.safaribooksonline.com/library/view/learning-robotics-using/9781783287536/
+  - https://www.safaribooksonline.com/library/view/effective-robotics-programming/9781786463654/
+  - https://www.safaribooksonline.com/library/view/programming-robots-with/9781449325480/
+  # Python, Gearman, MySQL
+  - https://www.safaribooksonline.com/library/view/python-network-programming/9781849513463/
+  - https://www.safaribooksonline.com/library/view/instant-parallel-processing/9781783284078/
+  - https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/
+  - https://www.safaribooksonline.com/library/view/high-performance-mysql/9781449332471/
 
 safari_ids:
   - '0131489062'
