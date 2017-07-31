@@ -1,4 +1,4 @@
-epub/
+epub
 output/
 *.ipynb
 *.pyc
