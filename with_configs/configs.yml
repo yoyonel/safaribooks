@@ -436,7 +436,49 @@ safari_urls:
   - https://www.safaribooksonline.com/library/view/ansible-playbook-essentials/9781784398293/
   - https://www.safaribooksonline.com/library/view/ansible-configuration-management/9781785282300/
   - https://www.safaribooksonline.com/library/view/learning-ansible/9781783550630/
-
+  # Kafka, JSON
+  - https://www.safaribooksonline.com/library/view/agile-data-science/9781491960103/
+  - https://www.safaribooksonline.com/library/view/data-center-handbook/9781118937570/
+  - https://www.safaribooksonline.com/library/view/big-data-smack/9781484221754/
+  - https://www.safaribooksonline.com/library/view/apache-kafka-cookbook/9781785882449/
+  - https://www.safaribooksonline.com/library/view/learning-apache-kafka/9781784393090/
+  - https://www.safaribooksonline.com/library/view/apache-kafka/9781782167938/
+  - https://www.safaribooksonline.com/library/view/json-at-work/9781491982389/
+  - https://www.safaribooksonline.com/library/view/hadoop-data-processing/9781787125162/
+  # Sound, Music, Audio Programming, Sound Processing, Game Audio
+  - https://www.safaribooksonline.com/library/view/composition-for-computer/9781598638615/
+  - https://www.safaribooksonline.com/library/view/harmony-for-computer/9781435456723/
+  - https://www.safaribooksonline.com/library/view/digital-electronics-for/9781484215838/
+  - https://www.safaribooksonline.com/library/view/music-theory-for/30000LTI00240/
+  - https://www.safaribooksonline.com/library/view/pro-tools-for/0321337034/
+  - https://www.safaribooksonline.com/library/view/audio-programming-for/9780240519418/
+  - https://www.safaribooksonline.com/library/view/digital-sound-processing/9780240515069/
+  - https://www.safaribooksonline.com/library/view/programming-for-tv/9780240806822/
+  - https://www.safaribooksonline.com/library/view/linux-sound-programming/9781484224960/
+  - https://www.safaribooksonline.com/library/view/programming-sound-with/9781941222492/
+  - https://www.safaribooksonline.com/library/view/digital-sound-processing/9780240515069/
+  - https://www.safaribooksonline.com/library/view/sound-system-design/9780240521565/
+  - https://www.safaribooksonline.com/library/view/producing-great-sound/9780415722070/
+  - https://www.safaribooksonline.com/library/view/sound-and-recording/9780415843409/
+  - https://www.safaribooksonline.com/library/view/sound-engineers-pocket/9780240516127/
+  - https://www.safaribooksonline.com/library/view/sound-system-engineering/9780240818467/
+  - https://www.safaribooksonline.com/library/view/handbook-for-sound/9780240809694/
+  - https://www.safaribooksonline.com/library/view/sound-synthesis-and/9780240516929/
+  - https://www.safaribooksonline.com/library/view/sound-for-film/9780240813301/
+  - https://www.safaribooksonline.com/library/view/the-art-of/9780240515120/
+  - https://www.safaribooksonline.com/library/view/sound-lighting-and/9780240811086/
+  - https://www.safaribooksonline.com/library/view/game-sound-technology/9781616928285/
+  - https://www.safaribooksonline.com/library/view/getting-started-with/9781849699099/
+  - https://www.safaribooksonline.com/library/view/audio-programming-for/9780240519418/
+  - https://www.safaribooksonline.com/library/view/game-audio-development/9781787286450/
+  - https://www.safaribooksonline.com/library/view/game-and-graphics/9781119975915/
+  - https://www.safaribooksonline.com/library/view/the-complete-guide/9780240810744/
+  - https://www.safaribooksonline.com/library/view/the-essential-guide/9780415706704/
+  - https://www.safaribooksonline.com/library/view/game-audio-implementation/9781317679455/
+  - https://www.safaribooksonline.com/library/view/the-game-audio/9780240817262/
+  - https://www.safaribooksonline.com/library/view/designing-interfaces-2nd/9781449379711/
+  - https://www.safaribooksonline.com/library/view/designing-products-with/9781491961094/
+  
 safari_ids:
   - '0131489062'
   - '0321160762'
