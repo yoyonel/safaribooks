@@ -413,6 +413,29 @@ safari_urls:
   - https://www.safaribooksonline.com/library/view/instant-parallel-processing/9781783284078/
   - https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/
   - https://www.safaribooksonline.com/library/view/high-performance-mysql/9781449332471/
+  # 2017-07-31
+  # Jenkins
+  - https://www.safaribooksonline.com/library/view/jenkins-the-definitive/9781449311155/
+  - https://www.safaribooksonline.com/library/view/learning-continuous-integration/9781785284830/
+  - https://www.safaribooksonline.com/library/view/extending-jenkins/9781785284243/
+  - https://www.safaribooksonline.com/library/view/mastering-jenkins/9781784390891/
+  - https://www.safaribooksonline.com/library/view/jenkins-essentials/9781783553471/
+  - https://www.safaribooksonline.com/library/view/jenkins-continuous-integration/9781784390082/
+  # Ansible 2
+  - https://www.safaribooksonline.com/library/view/implementing-devops-with/9781787120532/
+  - https://www.safaribooksonline.com/library/view/ansible-up-and/9781491979792/
+  - https://www.safaribooksonline.com/library/view/ansible-up-and/9781491915318/
+  - https://www.safaribooksonline.com/library/view/mastering-ansible-/9781787125681/
+  - https://www.safaribooksonline.com/library/view/openstack-administration-with/9781787121638/
+  - https://www.safaribooksonline.com/library/view/learning-ansible-2/9781786464231/
+  - https://www.safaribooksonline.com/library/view/ansible-beginner-to/9781484216590/
+  - https://www.safaribooksonline.com/library/view/get-started-with/9781491965191/
+  - https://www.safaribooksonline.com/library/view/extending-ansible/9781782175001/
+  - https://www.safaribooksonline.com/library/view/openstack-administration-with/9781785884610/
+  - https://www.safaribooksonline.com/library/view/mastering-ansible/9781784395483/
+  - https://www.safaribooksonline.com/library/view/ansible-playbook-essentials/9781784398293/
+  - https://www.safaribooksonline.com/library/view/ansible-configuration-management/9781785282300/
+  - https://www.safaribooksonline.com/library/view/learning-ansible/9781783550630/
 
 safari_ids:
   - '0131489062'
