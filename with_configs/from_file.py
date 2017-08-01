@@ -328,7 +328,7 @@ def parse_arguments():
     parser.add_argument('configs', type=argparse.FileType('r'),
                         help='<Required> Configs file')
     parser.add_argument('-o', '--epub-output', type=str, default='./epub/',
-                        help="EPub output directory (default: %(default)s")
+                        help="EPub output directory (default: %(default)s)")
     #
     parser.add_argument("--not-download", action="store_true", default=False,
                         help="Desactivate downloads (debug purpose)")

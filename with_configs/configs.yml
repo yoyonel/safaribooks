@@ -284,6 +284,7 @@ safari_urls:
   - https://www.safaribooksonline.com/library/view/professional-c-second/9781118169933/
   - https://www.safaribooksonline.com/library/view/api-design-for/9780123850034/
   - https://www.safaribooksonline.com/library/view/cross-platform-development-in/9780321246424/
+  - https://www.safaribooksonline.com/library/view/modern-c-programming/9781941222423/
   # C++: Design Pattern, STD, Boost
   - https://www.safaribooksonline.com/library/view/modern-c-design/0201704315/
   - https://www.safaribooksonline.com/library/view/c17-stl-cookbook/9781787120495/
@@ -477,59 +478,19 @@ safari_urls:
   - https://www.safaribooksonline.com/library/view/the-game-audio/9780240817262/
   - https://www.safaribooksonline.com/library/view/designing-interfaces-2nd/9781449379711/
   - https://www.safaribooksonline.com/library/view/designing-products-with/9781491961094/
-  # 2017-07-31
-  # C++, Safe C/C++, Android NDK, GDB, Boost, OpenGL, OpenCV3, Linux Embedded/Analysis, LLVM/Clang
-  - https://www.safaribooksonline.com/library/view/learning-boost-c/9781783551217/
-  - https://www.safaribooksonline.com/library/view/boost-c-application/9781849514880/
-  - https://www.safaribooksonline.com/library/view/boostasio-c-network/9781783986545/
-  - https://www.safaribooksonline.com/library/view/boostasio-c-network/9781785283079/
-  - https://www.safaribooksonline.com/library/view/c-how-to/9780133378795/
-  - https://www.safaribooksonline.com/library/view/c-for-programmers/9780137018499/
-  - https://www.safaribooksonline.com/library/view/c-cookbook/0596007612/
-  - https://www.safaribooksonline.com/library/view/c-in-a/059600298X/
-  - https://www.safaribooksonline.com/library/view/beginning-c-game/9781786466198/
-  - https://www.safaribooksonline.com/library/view/c-game-development/9781785882722/
-  - https://www.safaribooksonline.com/library/view/discovering-modern-c/9780134383682/
-  - https://www.safaribooksonline.com/library/view/advanced-metaprogramming-in/9781484210109/
-  - https://www.safaribooksonline.com/library/view/designing-software-synthesizer/9781138787070/
-  - https://www.safaribooksonline.com/library/view/exploring-c-11/9781430261933/
-  - https://www.safaribooksonline.com/library/view/secure-coding-in/9780132981989/
-  - https://www.safaribooksonline.com/library/view/pro-android-c/9781430248279/
-  - https://www.safaribooksonline.com/library/view/safe-c/9781449321338/
-  - https://www.safaribooksonline.com/library/view/the-c-standard/9780132978286/
-  - https://www.safaribooksonline.com/library/view/c-without-fear/9780132762748/
-  - https://www.safaribooksonline.com/library/view/c-data-structures/9780763755645/
-  - https://www.safaribooksonline.com/library/view/opengl-build/9781788296724/
-  - https://www.safaribooksonline.com/library/view/opengl-data-visualization/9781782169727/
-  - https://www.safaribooksonline.com/library/view/android-ndk-beginners/9781783989645/
-  - https://www.safaribooksonline.com/library/view/mastering-android-ndk/9781785288333/
-  - https://www.safaribooksonline.com/library/view/android-ndk-game/9781782167785/
-  - https://www.safaribooksonline.com/library/view/android-ndk-beginners/9781849691529/
-  - https://www.safaribooksonline.com/library/view/android-high-performance/9781785288951/
-  - https://www.safaribooksonline.com/library/view/android-native-development/9781849691505/
-  - https://www.safaribooksonline.com/library/view/android-recipes-a/9781430263227/
-  - https://www.safaribooksonline.com/library/view/programming-android/9781449309473/
-  - https://www.safaribooksonline.com/library/view/android-on-x86/9781430261308/
-  - https://www.safaribooksonline.com/library/view/android-application-development/9781484201008/
-  - https://www.safaribooksonline.com/library/view/asynchronous-android-programming/9781785883248/
-  - https://www.safaribooksonline.com/library/view/pro-android-games/9781484205877/
-  - https://www.safaribooksonline.com/library/view/opencv-android-programming/9781783550593/
-  - https://www.safaribooksonline.com/library/view/opencv-3-blueprints/9781784399757/
-  - https://www.safaribooksonline.com/library/view/accelerated-linux-core/9781908043979/
-  - https://www.safaribooksonline.com/library/view/accelerated-mac-os/9781908043405/
-  - https://www.safaribooksonline.com/library/view/the-art-of/9781593271749/
-  - https://www.safaribooksonline.com/library/view/gdb-pocket-reference/9780596100278/
-  - https://www.safaribooksonline.com/library/view/learning-linux-binary/9781782167105/
-  - https://www.safaribooksonline.com/library/view/c-in-a/9781491924174/
-  - https://www.safaribooksonline.com/library/view/memory-dump-analysis/9781908043511/
-  - https://www.safaribooksonline.com/library/view/mastering-sublime-text/9781849698429/
-  - https://www.safaribooksonline.com/library/view/modern-x86-assembly/9781484200643/
-  - https://www.safaribooksonline.com/library/view/practical-reverse-engineering/9781118787397/
-  - https://www.safaribooksonline.com/library/view/android-on-x86/9781430261308/
-  - https://www.safaribooksonline.com/library/view/llvm-cookbook/9781785285981/
-  - https://www.safaribooksonline.com/library/view/getting-started-with/9781782166924/
-  - https://www.safaribooksonline.com/library/view/llvm-essentials/9781785280801/
-
+  # 2017-08-01: Python, Algorithms, AI
+  - https://www.safaribooksonline.com/library/view/python-algorithms-mastering/9781484200551/
+  - https://www.safaribooksonline.com/library/view/python-algorithms-mastering/9781430232377/
+  - https://www.safaribooksonline.com/library/view/python-data-structures/9781786467355/
+  - https://www.safaribooksonline.com/library/view/algorithms-for-dummies/9781119330493/
+  - https://www.safaribooksonline.com/library/view/data-structures-and/9781118290279/
+  - https://www.safaribooksonline.com/library/view/data-structures-and/9780470618295/
+  - https://www.safaribooksonline.com/library/view/grokking-algorithms-an/9781617292231/
+  - https://www.safaribooksonline.com/library/view/artificial-intelligence-with/9781786464392/
+  - https://www.safaribooksonline.com/library/view/python-real-world/9781787123212/
+  - https://www.safaribooksonline.com/library/view/python-data-analysis/9781785282287/
+  - https://www.safaribooksonline.com/library/view/python-data-science/9781784396404/
+  
 safari_ids:
   - '0131489062'
   - '0321160762'
