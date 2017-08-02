@@ -494,6 +494,10 @@ safari_urls:
   - https://www.safaribooksonline.com/library/view/opengl-programming-guide/9780134495514/
   - https://www.safaribooksonline.com/library/view/opengl-4-shading/9781782167020/
   - https://www.safaribooksonline.com/library/view/computer-graphics-through/9781482258394/
+  # 2017-08-02: WebGL, GIS
+  - https://www.safaribooksonline.com/library/view/webgl-hotshot/9781783280919/
+  - https://www.safaribooksonline.com/library/view/high-performance-mobile/9781491912546/
+  - https://www.safaribooksonline.com/library/view/interactive-data-visualization/9781491921296/
   
 safari_ids:
   - '0131489062'

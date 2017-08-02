@@ -197,10 +197,11 @@ def _launch_scrapy_book_downloader(container, functor_to_get_id_name_book, confi
             book_id, book_name = functor_to_get_id_name_book(item)
 
             # scrapy crawl SafariBooks -a user=$1 -a password=$2 -a bookid=$3
-            cmd = "scrapy crawl SafariBooks -a user={} -a password={} -a bookid={}".format(
+            cmd = "scrapy crawl SafariBooks -a user={} -a password={} -a bookid={} -a epub_output={}".format(
                 config.user,
                 config.password,
-                book_id
+                book_id,
+                config.epub_output
             )
             logger.debug("cmd: {}".format(cmd))
 
