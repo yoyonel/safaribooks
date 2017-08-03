@@ -498,6 +498,36 @@ safari_urls:
   - https://www.safaribooksonline.com/library/view/webgl-hotshot/9781783280919/
   - https://www.safaribooksonline.com/library/view/high-performance-mobile/9781491912546/
   - https://www.safaribooksonline.com/library/view/interactive-data-visualization/9781491921296/
+  # 2017-08-03: MicroServices, Python, Go, Node.js
+  - https://www.safaribooksonline.com/library/view/python-microservices-development/9781785881114/
+  - https://www.safaribooksonline.com/library/view/production-ready-microservices/9781491965962/
+  - https://www.safaribooksonline.com/library/view/microservices-from-day/9781484219379/
+  - https://www.safaribooksonline.com/library/view/developing-microservices-with/9781785887406/
+  - https://www.safaribooksonline.com/library/view/modern-linux-administration/9781491935941/
+  - https://www.safaribooksonline.com/library/view/microservice-architecture/9781491956328/
+  ## Flash, NGINX, Python (Raspberry Pi, Networking)
+  - https://www.safaribooksonline.com/library/view/flask-building-python/9781787288225/
+  - https://www.safaribooksonline.com/library/view/flask-by-example/9781785286933/
+  - https://www.safaribooksonline.com/library/view/flask-blueprints/9781784394783/
+  - https://www.safaribooksonline.com/library/view/learning-flask-framework/9781783983360/
+  - https://www.safaribooksonline.com/library/view/mastering-flask/9781784393656/
+  - https://www.safaribooksonline.com/library/view/flask-framework-cookbook/9781783983407/
+  - https://www.safaribooksonline.com/library/view/flask-web-development/9781491947586/
+  - https://www.safaribooksonline.com/library/view/instant-flask-web/9781782169628/
+  - https://www.safaribooksonline.com/library/view/python-programming-with/9781786467577/
+  - https://www.safaribooksonline.com/library/view/learning-python-network/9781784396008/
+  - https://www.safaribooksonline.com/library/view/learning-raspberry-pi/9781783982820/
+  - https://www.safaribooksonline.com/library/view/nginx-from-beginner/9781484216569/
+  - https://www.safaribooksonline.com/library/view/nginx/9781491924761/
+  - https://www.safaribooksonline.com/library/view/mastering-nginx-/9781782173311/
+  - https://www.safaribooksonline.com/library/view/nginx-troubleshooting/9781785288654/
+  - https://www.safaribooksonline.com/library/view/nginx-http-server/9781785280337/
+  - https://www.safaribooksonline.com/library/view/nginx-essentials/9781785289538/
+  - https://www.safaribooksonline.com/library/view/nginx-high-performance/9781785281839/
+  - https://www.safaribooksonline.com/library/view/nginx-http-server/9781782162322/
+  - https://www.safaribooksonline.com/library/view/instant-nginx-starter/9781782165125/
+  - https://www.safaribooksonline.com/library/view/mastering-nginx/9781849517447/
+  - https://www.safaribooksonline.com/library/view/nginx-1-web/9781849514965/
   
 safari_ids:
   - '0131489062'
