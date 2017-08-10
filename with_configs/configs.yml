@@ -528,6 +528,13 @@ safari_urls:
   - https://www.safaribooksonline.com/library/view/instant-nginx-starter/9781782165125/
   - https://www.safaribooksonline.com/library/view/mastering-nginx/9781849517447/
   - https://www.safaribooksonline.com/library/view/nginx-1-web/9781849514965/
+  # 2017-08-09: Redis, RabbitMQ, Django
+  - https://www.safaribooksonline.com/library/view/mastering-redis/9781783988181/
+  - https://www.safaribooksonline.com/library/view/mastering-rabbitmq/9781783981526/
+  - https://www.safaribooksonline.com/library/view/django-by-example/9781784391911/
+  - https://www.safaribooksonline.com/library/view/parallel-programming-with/9781783288397/
+  - https://www.safaribooksonline.com/library/view/pro-python-system/9781484202173/
+  - https://www.safaribooksonline.com/library/view/mastering-predictive-analytics/9781785882715/
   
 safari_ids:
   - '0131489062'
